@@ -1,0 +1,195 @@
+﻿@{
+    Layout = null;
+}
+<div ng-controller="InstancesListCtrl" style="min-width: 700px">
+
+    <div class="fieldset">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+                <!--Instance Name -->
+                <div class="form-inline">
+                    <div class="form-group form-label">
+                        <span>Instance Name</span>
+                    </div>
+
+                    <div class="form-group filter">
+                        <input id="txtSearchText" type="text" ng-model="filterByFields.InstanceName" class="form-control"
+                               placeholder="Seach Text" maxlength="25" ng-focus="errorMessage=''">
+                    </div>
+                </div>
+                <div class="bottom-line"></div>
+
+                <!--Host Name -->
+                <div class="form-inline">
+                    <div class="form-group form-label">
+                        <span>Host Name</span>
+                    </div>
+
+                    <div class="form-group filter">
+                        <input id="txtSearchText" type="text" ng-model="filterByFields.HostName" class="form-control"
+                               placeholder="Seach Text" maxlength="25" ng-focus="errorMessage=''">
+                    </div>
+                </div>
+                <div class="bottom-line"></div>
+
+                <!--Status -->
+                <div class="form-inline">
+                    <div class="form-group form-label">
+                        <span>Status</span>
+                    </div>
+                    <div class="form-group filter">
+                        <select class=" filter-control form-control placeholder-color"
+                                ng-model="filterByFields.Status"
+                                ng-change="changeDdlClass('ddlSearchType')"
+                                ng-focus="errorMessage=''">
+                            <option value="" class="placeholder-color">please select status</option>
+                            <option value="0" class="placeholder-color">Offline</option>
+                            <option value="1" class="placeholder-color">Online</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="bottom-line"></div>
+
+                <!--User Name -->
+                <div class="form-inline">
+                    <div class="form-group form-label">
+                        <span>User Name</span>
+                    </div>
+
+                    <div class="form-group filter">
+                        <input id="txtSearchText" type="text" ng-model="filterByFields.UserName" class="form-control"
+                               placeholder="Seach Text" maxlength="25" ng-focus="errorMessage=''">
+                    </div>
+                </div>
+                <div class="bottom-line"></div>
+
+                <!--Version -->
+                <div class="form-inline">
+                    <div class="form-group form-label">
+                        <span>Version</span>
+                    </div>
+                    <div class="form-group filter">
+                        <input id="txtSearchText" type="text" ng-model="filterByFields.Version" class="form-control"
+                               placeholder="Seach Text" maxlength="25" ng-focus="errorMessage=''">
+                    </div>
+                </div>
+                <div class="bottom-line"></div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+
+                <!--Added -->
+                <div class="form-inline">
+                    <div class="form-group form-label">
+                        <span>Added: from</span>
+                    </div>
+                    <div class="form-group input-append date first-avail">
+                        <input type="text" ng-model="filterByFields.AddedFrom" class="form-control" style="width:100px;" id="txtFirstAvailFrom" placeholder="Date from"
+                               datepicker-popup="{{format}}" is-open="addedFrom" min-date="'2000-01-01'" max-date="'2020-12-31'" datepicker-options="dateOptions"
+                               show-button-bar="false" ng-required="true" ng-focus="errorMessage=''">
+                        <span>
+                            <button type="button" class="btn btn-default" ng-click="openAddedFrom($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="bottom-line"></div>
+
+                <div class="form-inline">
+                    <div class="form-group form-label">
+                        <span>to</span>
+                    </div>
+                    <div class="form-group input-append date first-avail">
+                        <input type="text" ng-model="filterByFields.AddedTo" class="form-control" style="width:100px;" id="txtFirstAvailTo" placeholder="Date to"
+                               datepicker-popup="{{format}}" is-open="addedTo" min-date="'2000-01-01'" max-date="'2020-12-31'" datepicker-options="dateOptions"
+                               show-button-bar="false" ng-required="true" ng-focus="errorMessage=''">
+                        <span>
+                            <button type="button" class="btn btn-default" ng-click="openAddedTo($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="bottom-line"></div>
+
+                <!--Modified -->
+                <div class="form-inline">
+                    <div class="form-group form-label">
+                        <span>Modified: from</span>
+                    </div>
+                    <div class="form-group input-append date first-avail">
+                        <input type="text" ng-model="filterByFields.ModifiedFrom" class="form-control" style="width:100px;" id="txtFirstAvailFrom" placeholder="Date from"
+                               datepicker-popup="{{format}}" is-open="modifiedFrom" min-date="'2000-01-01'" max-date="'2020-12-31'" datepicker-options="dateOptions"
+                               show-button-bar="false" ng-required="true" ng-focus="errorMessage=''">
+                        <span>
+                            <button type="button" class="btn btn-default" ng-click="openModifiedFrom($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="bottom-line"></div>
+
+                <div class="form-inline">
+                    <div class="form-group form-label">
+                        <span>to</span>
+                    </div>
+                    <div class="form-group input-append date first-avail">
+                        <input type="text" ng-model="filterByFields.ModifiedTo" class="form-control" style="width:100px;" id="txtFirstAvailTo" placeholder="Date to"
+                               datepicker-popup="{{format}}" is-open="modifiedTo" min-date="'2000-01-01'" max-date="'2020-12-31'" datepicker-options="dateOptions"
+                               show-button-bar="false" ng-required="true" ng-focus="errorMessage=''">
+                        <span>
+                            <button type="button" class="btn btn-default" ng-click="openModifiedTo($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="bottom-line"></div>
+
+                <div class="form-inline">
+                    <div class="form-group form-label"></div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary " id="btnLoadProductList" ng-click="clickFilter()">&#160;&#160;Filter&#160;&#160;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="" style="padding: 0px;"  >
+        <table tr-ng-grid page-items="20" items='instances' total-items="instancesTotalCount" order-by="myOrderBy" order-by-reverse="myOrderByReverse"
+               on-data-required="onServerSideItemsRequested(currentPage, pageItems, filterBy, filterByFields, orderBy, orderByReverse)" >
+            <thead>
+                <tr>
+                    <th field-name="Id" display-name="Id" cell-width="120px" enable-filtering="false">
+                    </th>
+                    <th field-name="InstanceName" display-name="InstanceName" cell-width="120px" enable-filtering="false">
+                    </th>
+                    <th field-name="HostName" display-name="HostName" cell-width="70px" display-align="center" enable-filtering="false">
+                    </th>
+                    <th field-name="Added" display-name="Added" cell-width="120px" display-format="dateFilter:gridItem.Added" enable-filtering="false">
+                    </th>
+                    <th field-name="Modified" display-name="Modified" cell-width="120px" display-format="dateFilter:gridItem.Modified" enable-filtering="false">
+                    </th>
+                    <th field-name="Status" display-name="Status" cell-width="120px" display-format="instStatus:gridItem.Status" enable-filtering="false">
+                    </th>
+                    <th field-name="UserName" display-name="UserName" cell-width="120px" enable-filtering="false">
+                    </th>
+                    <th field-name="Version" display-name="Version" cell-width="200px" enable-filtering="false">
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr cell-width="120px">
+                    <td>
+                        <a class="btn btn-primary glyphicon glyphicon-search" href="#/instances/{{gridItem.Id}}">
+                            View
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td align="center">
+                        <span tr-ng-grid-pager="" style="height:40px;"></span>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

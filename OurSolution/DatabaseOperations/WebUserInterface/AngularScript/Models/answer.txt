@@ -1,0 +1,4 @@
+﻿{
+  "Status": 1,
+  "Error": "Error from server"
+}

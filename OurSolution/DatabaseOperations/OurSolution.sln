@@ -1,0 +1,184 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceLibrary", "WcfServiceLibrary\WcfServiceLibrary.csproj", "{A7CBD34E-FE7C-47D5-B9D0-6E0C3C78E045}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUserInterface", "WebUserInterface\WebUserInterface.csproj", "{7FC82E52-BD9A-4E04-8C4D-2B7B9E141151}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsService", "WindowsService\WindowsService.csproj", "{4D434F25-AB7D-4BFB-9E1A-0E75238EF1EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{35C5335D-C955-4D17-8C20-857EB7A65578}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{9A70B0CC-3AF4-41E1-9E0D-9348DC1F45F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerService", "LoggerService\LoggerService.csproj", "{5EF46765-9DA9-4CA4-ADCF-C4D7B6D2C666}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryTests", "RepositoryTests\RepositoryTests.csproj", "{91B3B317-9BF8-4023-960D-72B0E0871259}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCollector", "DataCollector\DataCollector.csproj", "{FE052CD5-06DD-4E6F-B15E-1A837EF769D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstanceSearcher", "InstanceSearcher\InstanceSearcher.csproj", "{B83D20F9-7540-49E4-8E13-9C0E8D065F8B}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Installer", "Installer\Installer.wixproj", "{47214962-A340-4FE6-90C9-0648626043FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomActionCreateDatabase", "CustomActionCreateDatabase\CustomActionCreateDatabase.csproj", "{D170EE1B-499B-495E-BE79-3861DD86A87B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFWindowsServiceHosting", "WCFWindowsServiceHosting\WCFWindowsServiceHosting.csproj", "{0945B22C-3328-48EF-BBC4-3460668A78CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlScriptCreator", "SqlScriptCreator\SqlScriptCreator.csproj", "{36198259-7DED-4F1E-B96B-8058D5B0E729}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7CBD34E-FE7C-47D5-B9D0-6E0C3C78E045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7CBD34E-FE7C-47D5-B9D0-6E0C3C78E045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7CBD34E-FE7C-47D5-B9D0-6E0C3C78E045}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A7CBD34E-FE7C-47D5-B9D0-6E0C3C78E045}.Debug|x86.Build.0 = Debug|Any CPU
+		{A7CBD34E-FE7C-47D5-B9D0-6E0C3C78E045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7CBD34E-FE7C-47D5-B9D0-6E0C3C78E045}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7CBD34E-FE7C-47D5-B9D0-6E0C3C78E045}.Release|x86.ActiveCfg = Release|Any CPU
+		{A7CBD34E-FE7C-47D5-B9D0-6E0C3C78E045}.Release|x86.Build.0 = Release|Any CPU
+		{7FC82E52-BD9A-4E04-8C4D-2B7B9E141151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FC82E52-BD9A-4E04-8C4D-2B7B9E141151}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FC82E52-BD9A-4E04-8C4D-2B7B9E141151}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7FC82E52-BD9A-4E04-8C4D-2B7B9E141151}.Debug|x86.Build.0 = Debug|Any CPU
+		{7FC82E52-BD9A-4E04-8C4D-2B7B9E141151}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FC82E52-BD9A-4E04-8C4D-2B7B9E141151}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FC82E52-BD9A-4E04-8C4D-2B7B9E141151}.Release|x86.ActiveCfg = Release|Any CPU
+		{7FC82E52-BD9A-4E04-8C4D-2B7B9E141151}.Release|x86.Build.0 = Release|Any CPU
+		{4D434F25-AB7D-4BFB-9E1A-0E75238EF1EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D434F25-AB7D-4BFB-9E1A-0E75238EF1EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D434F25-AB7D-4BFB-9E1A-0E75238EF1EA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4D434F25-AB7D-4BFB-9E1A-0E75238EF1EA}.Debug|x86.Build.0 = Debug|Any CPU
+		{4D434F25-AB7D-4BFB-9E1A-0E75238EF1EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D434F25-AB7D-4BFB-9E1A-0E75238EF1EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D434F25-AB7D-4BFB-9E1A-0E75238EF1EA}.Release|x86.ActiveCfg = Release|Any CPU
+		{4D434F25-AB7D-4BFB-9E1A-0E75238EF1EA}.Release|x86.Build.0 = Release|Any CPU
+		{35C5335D-C955-4D17-8C20-857EB7A65578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35C5335D-C955-4D17-8C20-857EB7A65578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35C5335D-C955-4D17-8C20-857EB7A65578}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{35C5335D-C955-4D17-8C20-857EB7A65578}.Debug|x86.Build.0 = Debug|Any CPU
+		{35C5335D-C955-4D17-8C20-857EB7A65578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35C5335D-C955-4D17-8C20-857EB7A65578}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35C5335D-C955-4D17-8C20-857EB7A65578}.Release|x86.ActiveCfg = Release|Any CPU
+		{35C5335D-C955-4D17-8C20-857EB7A65578}.Release|x86.Build.0 = Release|Any CPU
+		{9A70B0CC-3AF4-41E1-9E0D-9348DC1F45F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A70B0CC-3AF4-41E1-9E0D-9348DC1F45F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A70B0CC-3AF4-41E1-9E0D-9348DC1F45F4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9A70B0CC-3AF4-41E1-9E0D-9348DC1F45F4}.Debug|x86.Build.0 = Debug|Any CPU
+		{9A70B0CC-3AF4-41E1-9E0D-9348DC1F45F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A70B0CC-3AF4-41E1-9E0D-9348DC1F45F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A70B0CC-3AF4-41E1-9E0D-9348DC1F45F4}.Release|x86.ActiveCfg = Release|Any CPU
+		{9A70B0CC-3AF4-41E1-9E0D-9348DC1F45F4}.Release|x86.Build.0 = Release|Any CPU
+		{5EF46765-9DA9-4CA4-ADCF-C4D7B6D2C666}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EF46765-9DA9-4CA4-ADCF-C4D7B6D2C666}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EF46765-9DA9-4CA4-ADCF-C4D7B6D2C666}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5EF46765-9DA9-4CA4-ADCF-C4D7B6D2C666}.Debug|x86.Build.0 = Debug|Any CPU
+		{5EF46765-9DA9-4CA4-ADCF-C4D7B6D2C666}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EF46765-9DA9-4CA4-ADCF-C4D7B6D2C666}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EF46765-9DA9-4CA4-ADCF-C4D7B6D2C666}.Release|x86.ActiveCfg = Release|Any CPU
+		{5EF46765-9DA9-4CA4-ADCF-C4D7B6D2C666}.Release|x86.Build.0 = Release|Any CPU
+		{91B3B317-9BF8-4023-960D-72B0E0871259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91B3B317-9BF8-4023-960D-72B0E0871259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91B3B317-9BF8-4023-960D-72B0E0871259}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{91B3B317-9BF8-4023-960D-72B0E0871259}.Debug|x86.Build.0 = Debug|Any CPU
+		{91B3B317-9BF8-4023-960D-72B0E0871259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91B3B317-9BF8-4023-960D-72B0E0871259}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91B3B317-9BF8-4023-960D-72B0E0871259}.Release|x86.ActiveCfg = Release|Any CPU
+		{FE052CD5-06DD-4E6F-B15E-1A837EF769D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE052CD5-06DD-4E6F-B15E-1A837EF769D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE052CD5-06DD-4E6F-B15E-1A837EF769D7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FE052CD5-06DD-4E6F-B15E-1A837EF769D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE052CD5-06DD-4E6F-B15E-1A837EF769D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE052CD5-06DD-4E6F-B15E-1A837EF769D7}.Release|x86.ActiveCfg = Release|Any CPU
+		{B83D20F9-7540-49E4-8E13-9C0E8D065F8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B83D20F9-7540-49E4-8E13-9C0E8D065F8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B83D20F9-7540-49E4-8E13-9C0E8D065F8B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B83D20F9-7540-49E4-8E13-9C0E8D065F8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B83D20F9-7540-49E4-8E13-9C0E8D065F8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B83D20F9-7540-49E4-8E13-9C0E8D065F8B}.Release|x86.ActiveCfg = Release|Any CPU
+		{47214962-A340-4FE6-90C9-0648626043FD}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{47214962-A340-4FE6-90C9-0648626043FD}.Debug|x86.ActiveCfg = Debug|x86
+		{47214962-A340-4FE6-90C9-0648626043FD}.Debug|x86.Build.0 = Debug|x86
+		{47214962-A340-4FE6-90C9-0648626043FD}.Release|Any CPU.ActiveCfg = Release|x86
+		{47214962-A340-4FE6-90C9-0648626043FD}.Release|x86.ActiveCfg = Release|x86
+		{47214962-A340-4FE6-90C9-0648626043FD}.Release|x86.Build.0 = Release|x86
+		{D170EE1B-499B-495E-BE79-3861DD86A87B}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{D170EE1B-499B-495E-BE79-3861DD86A87B}.Debug|x86.ActiveCfg = Debug|x86
+		{D170EE1B-499B-495E-BE79-3861DD86A87B}.Debug|x86.Build.0 = Debug|x86
+		{D170EE1B-499B-495E-BE79-3861DD86A87B}.Release|Any CPU.ActiveCfg = Release|x86
+		{D170EE1B-499B-495E-BE79-3861DD86A87B}.Release|x86.ActiveCfg = Release|x86
+		{D170EE1B-499B-495E-BE79-3861DD86A87B}.Release|x86.Build.0 = Release|x86
+		{0945B22C-3328-48EF-BBC4-3460668A78CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0945B22C-3328-48EF-BBC4-3460668A78CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0945B22C-3328-48EF-BBC4-3460668A78CC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0945B22C-3328-48EF-BBC4-3460668A78CC}.Debug|x86.Build.0 = Debug|Any CPU
+		{0945B22C-3328-48EF-BBC4-3460668A78CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0945B22C-3328-48EF-BBC4-3460668A78CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0945B22C-3328-48EF-BBC4-3460668A78CC}.Release|x86.ActiveCfg = Release|Any CPU
+		{0945B22C-3328-48EF-BBC4-3460668A78CC}.Release|x86.Build.0 = Release|Any CPU
+		{36198259-7DED-4F1E-B96B-8058D5B0E729}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36198259-7DED-4F1E-B96B-8058D5B0E729}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36198259-7DED-4F1E-B96B-8058D5B0E729}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{36198259-7DED-4F1E-B96B-8058D5B0E729}.Debug|x86.Build.0 = Debug|Any CPU
+		{36198259-7DED-4F1E-B96B-8058D5B0E729}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36198259-7DED-4F1E-B96B-8058D5B0E729}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36198259-7DED-4F1E-B96B-8058D5B0E729}.Release|x86.ActiveCfg = Release|Any CPU
+		{36198259-7DED-4F1E-B96B-8058D5B0E729}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 14
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://syhestkiy.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = WcfServiceLibrary\\WcfServiceLibrary.csproj
+		SccProjectName1 = WcfServiceLibrary
+		SccLocalPath1 = WcfServiceLibrary
+		SccProjectUniqueName2 = WebUserInterface\\WebUserInterface.csproj
+		SccProjectName2 = WebUserInterface
+		SccLocalPath2 = WebUserInterface
+		SccProjectUniqueName3 = WindowsService\\WindowsService.csproj
+		SccProjectName3 = WindowsService
+		SccLocalPath3 = WindowsService
+		SccProjectUniqueName4 = Models\\Models.csproj
+		SccProjectName4 = Models
+		SccLocalPath4 = Models
+		SccProjectUniqueName5 = Repository\\Repository.csproj
+		SccProjectName5 = Repository
+		SccLocalPath5 = Repository
+		SccProjectUniqueName6 = LoggerService\\LoggerService.csproj
+		SccProjectName6 = LoggerService
+		SccLocalPath6 = LoggerService
+		SccProjectUniqueName7 = RepositoryTests\\RepositoryTests.csproj
+		SccProjectName7 = RepositoryTests
+		SccLocalPath7 = RepositoryTests
+		SccProjectUniqueName8 = DataCollector\\DataCollector.csproj
+		SccProjectName8 = DataCollector
+		SccLocalPath8 = DataCollector
+		SccProjectUniqueName9 = InstanceSearcher\\InstanceSearcher.csproj
+		SccProjectName9 = InstanceSearcher
+		SccLocalPath9 = InstanceSearcher
+		SccProjectUniqueName10 = Installer\\Installer.wixproj
+		SccProjectName10 = Installer
+		SccLocalPath10 = Installer
+		SccProjectUniqueName11 = CustomActionCreateDatabase\\CustomActionCreateDatabase.csproj
+		SccProjectName11 = CustomActionCreateDatabase
+		SccLocalPath11 = CustomActionCreateDatabase
+		SccProjectUniqueName12 = WCFWindowsServiceHosting\\WCFWindowsServiceHosting.csproj
+		SccProjectName12 = WCFWindowsServiceHosting
+		SccLocalPath12 = WCFWindowsServiceHosting
+		SccProjectUniqueName13 = SqlScriptCreator\\SqlScriptCreator.csproj
+		SccProjectName13 = SqlScriptCreator
+		SccLocalPath13 = SqlScriptCreator
+	EndGlobalSection
+EndGlobal

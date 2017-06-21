@@ -1,0 +1,28 @@
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?include Common.wxi ?>
+  <Product Name="$(var.PRODUCT) $(var.VERSION)" Id="*" UpgradeCode="b07a102f-6531-4abe-b791-276f7ee96b57" Language="1033" Codepage="1252" Version="$(var.VERSION)" Manufacturer="$(var.MANUFACTURER)">
+    <Package Id="*" Keywords="Installer, MSI, Package" Manufacturer="$(var.MANUFACTURER)" InstallerVersion="150" Languages="1033" Compressed="yes" InstallScope="perMachine" SummaryCodepage="1252" />
+    <!-- Upgrade Handling -->
+    <MajorUpgrade Schedule="afterInstallInitialize" DowngradeErrorMessage="A newer version of $(var.PRODUCT) is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+    <UIRef Id="UI_Custom" />
+    <!-- Variables -->
+    <WixVariable Id="WixUILicenseRtf" Value="ProjectFiles\eula.rtf" />
+    <WixVariable Id="WixUIDialogBmp" Value="ProjectFiles\Dialog.bmp" />
+    <WixVariable Id="WixUIBannerBmp" Value="ProjectFiles\Banner.bmp" />
+    <!-- Properties -->
+    <Property Id="ApplicationFolderName" Value="$(var.MANUFACTURER)" />
+    <Property Id="WIXUI_INSTALLDIR" Value="APPLICATIONFOLDER" />
+    <Property Id="ARPPRODUCTICON" Value="ADDREMOVEICON.ico" />
+    <!-- Folder Structure in Directories.wxs-->
+    <PropertyRef Id="DirectoryStructure" />
+    <!-- Complete Feature in CompleteFeature.wxs-->
+    <FeatureGroupRef Id="CompleteFeatures" />
+    <!-- Icons-->
+    <Icon Id="ADDREMOVEICON.ico" SourceFile="ProjectFiles\addremove.ico" />
+    <Icon Id="APPLICATIONICON.ico" SourceFile="ProjectFiles\app.ico" />
+    <InstallExecuteSequence>
+      <Custom Action='CustomActionCreateDatabase' Before='InstallFinalize'>NOT Installed</Custom>
+    </InstallExecuteSequence>
+  </Product>
+</Wix>

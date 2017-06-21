@@ -1,0 +1,12 @@
+﻿IF OBJECT_ID('Databases', 'U') IS NULL
+	CREATE TABLE Databases
+	(
+		Id INT NOT NULL PRIMARY KEY IDENTITY (1,1), 
+		Name VARCHAR(64) NOT NULL, 
+		CreateTime DATETIME NOT NULL, 
+		TotalSize INT NOT NULL,
+		DbState INT NOT NULL,
+		InstanceId INT NOT NULL CONSTRAINT FK_Databases_Instances FOREIGN KEY REFERENCES Instances(Id)
+	)
+GO
+

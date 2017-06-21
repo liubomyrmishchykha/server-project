@@ -1,0 +1,12 @@
+﻿IF OBJECT_ID('Options', 'U') IS NULL
+	CREATE TABLE Options
+	(
+		Id INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
+		Interval INT NOT NULL DEFAULT 5
+	)
+GO
+
+INSERT INTO Options(Interval)
+			VALUES(2)
+GO
+

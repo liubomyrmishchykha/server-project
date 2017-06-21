@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?include Common.wxi ?>
+<Wix xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension" xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <Property Id="DirectoryStructure" Value="1" />
+    <!-- Installation Folder -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="ManufacturerFolder" Name="$(var.MANUFACTURER)">
+          <Directory Id="APPLICATIONFOLDER" Name="$(var.BINFOLDER)">
+            <Directory Id="APPLICATIONFOLDERWS" Name="$(var.PRODUCTWS)"></Directory>
+            <Directory Id="APPLICATIONFOLDERWCF" Name="$(var.PRODUCTWCF)"></Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+      <!-- Start Menu Folder -->
+      <Directory Id="ProgramMenuFolder" Name="Programs">
+        <Directory Id="ProgramMenuDir" Name="$(var.PRODUCT)">
+          <Component Id="ProgramMenuDir" Guid="a20dd638-85db-4771-9018-425315671dc6">
+            <RemoveFolder Id="ProgramMenuDir" On="uninstall" />
+            <RegistryValue Root="HKCU" Key="Software\$(var.MANUFACTURER)\$(var.PRODUCT)" Type="string" Value="" KeyPath="yes" />
+          </Component>
+        </Directory>
+      </Directory>
+      <!-- Desktop Folder -->
+      <Directory Id="DesktopFolder" Name="Desktop" />
+    </Directory>
+    <DirectoryRef Id="APPLICATIONFOLDERWS">
+      <Component Id="SqlmasterWindowsService" Guid="dba74a12-d63b-4397-a865-0c2236a3341e">
+        <File Id="File_WindowsService" Source="$(var.WindowsService.TargetDir)WindowsService.exe" KeyPath="yes">
+          <Shortcut Id="SM_WindowsService" Directory="ProgramMenuDir" Name="DiscoveryService" WorkingDirectory="APPLICATIONFOLDERWS" Icon="APPLICATIONICON.ico" IconIndex="0" Advertise="yes" />
+          <Shortcut Id="DT_WindowsService" Directory="DesktopFolder" Name="DiscoveryService" WorkingDirectory="APPLICATIONFOLDERWS" Icon="APPLICATIONICON.ico" IconIndex="0" Advertise="yes" />
+          <netfx:NativeImage Id="NG_WindowsService" Platform="all" Priority="0" AppBaseDirectory="APPLICATIONFOLDERWS" />
+        </File>
+        <ServiceInstall Id="DiscoveryServiceInstaller"
+                Type="ownProcess"
+                Vital="yes"
+                Name="DiscoveryService"
+                DisplayName="Discovery service"
+                Description="Service which will be seaching for SQL instances"
+                Start="auto"
+                Account="LocalSystem"
+                ErrorControl="ignore"
+                Arguments=" /start DiscoveryService"
+                Interactive="no" />
+
+        <ServiceControl Id="StartDiscoveryService"
+                        Start="install"
+                        Stop="both"
+                        Remove="uninstall"
+                        Name="DiscoveryService"
+                        Wait="yes" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="APPLICATIONFOLDERWCF">
+      <Component Id="SqlmasterWCFWindowsServiceHost" Guid="DF56C698-A361-45A7-8606-16BA9445B7C4">
+        <File Id="File_WCFWindowsServiceHosting" Source="$(var.WCFWindowsServiceHosting.TargetDir)WCFWindowsServiceHosting.exe" KeyPath="yes">
+          <Shortcut Id="SM_WCFWindowsServiceHost" Directory="ProgramMenuDir" Name="WCFWindowsServiceHost" WorkingDirectory="APPLICATIONFOLDERWCF" Icon="APPLICATIONICON.ico" IconIndex="0" Advertise="yes" />
+          <Shortcut Id="DT_WCFWindowsServiceHost" Directory="DesktopFolder" Name="WCFWindowsServiceHost" WorkingDirectory="APPLICATIONFOLDERWCF" Icon="APPLICATIONICON.ico" IconIndex="0" Advertise="yes" />
+          <netfx:NativeImage Id="NG_WCFWindowsServiceHost" Platform="all" Priority="0" AppBaseDirectory="APPLICATIONFOLDERWCF" />
+        </File>
+        <ServiceInstall Id="WCFWindowsServiceHostInstaller"
+        Type="ownProcess"
+        Vital="yes"
+        Name="WcfHostService"
+        DisplayName="WCF host service"
+        Description="Service which hosts WCF service"
+        Start="auto"
+        Account="LocalSystem"
+        ErrorControl="ignore"
+        Arguments=" /start WcfHostService"
+        Interactive="no" />
+
+        <ServiceControl Id="StartWcfHostService"
+                        Start="install"
+                        Stop="both"
+                        Remove="uninstall"
+                        Name="WcfHostService"
+                        Wait="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>

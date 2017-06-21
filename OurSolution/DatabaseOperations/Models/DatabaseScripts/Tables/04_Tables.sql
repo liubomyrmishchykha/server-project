@@ -1,0 +1,10 @@
+﻿IF OBJECT_ID('Tables', 'U') IS NULL
+	CREATE TABLE Tables 
+	(
+		Id INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
+		Name VARCHAR(64) NOT NULL, 
+		ColumnCount INT NOT NULL,
+		DatabaseId INT NOT NULL CONSTRAINT FK_Tables_Databases FOREIGN KEY REFERENCES Databases(Id)
+	)
+GO
+

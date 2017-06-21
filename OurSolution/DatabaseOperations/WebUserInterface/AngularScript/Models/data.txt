@@ -1,0 +1,102 @@
+﻿[
+  {
+      "Id": 0,
+      "InstanceName": "Zstudent1/db1",
+      "Added": "/Date(1446460993730)/",
+      "Modified": "/Date(1446460993730)/",
+      "Status": 0,
+      "AuthMode": 1,
+      "UserName": "Ivan",
+      "Password": "qwertyu",
+      "Version": "12.23.444.01"
+  },
+  {
+      "Id": 1,
+      "InstanceName": "Kstudent2/dber1",
+      "Added": "/Date(1446460993730)/",
+      "Modified": "/Date(1446460993730+0200)/",
+      "Status": 0,
+      "AuthMode": 1,
+      "UserName": "Ivan",
+      "Password": "qwertyu",
+      "Version": "12.23.444.01"
+  },
+  {
+      "Id": 2,
+      "InstanceName": "student1/datab1",
+      "Added": "/Date(1446460993730+0200)/",
+      "Modified": "/Date(1446460993730+0200)/",
+      "Status": 0,
+      "AuthMode": 1,
+      "UserName": "Ivan",
+      "Password": "qwertyu",
+      "Version": "12.23.444.01"
+  },
+  {
+      "Id": 3,
+      "InstanceName": "student1/db1",
+      "Added": "/Date(1446460993730)/",
+      "Modified": "/Date(1446460993730+0200)/",
+      "Status": 0,
+      "AuthMode": 1,
+      "UserName": "Ivan",
+      "Password": "qwertyu",
+      "Version": "12.23.444.01"
+  }, 
+  {
+      "Id": 4,
+      "InstanceName": "student5/dffffb1",
+      "Added": "/Date(1446460993730)/",
+      "Modified": "/Date(1446460993730)/",
+      "Status": 0,
+      "AuthMode": 1,
+      "UserName": "Ivan",
+      "Password": "qwertyu",
+      "Version": "12.23.444.01"
+    }, 
+  {
+      "Id": 5,
+      "InstanceName": "student5/dffffb1",
+      "Added": "/Date(1446460993730)/",
+      "Modified": "/Date(1446460993730)/",
+      "Status": 0,
+      "AuthMode": 1,
+      "UserName": "Ivan",
+      "Password": "qwertyu",
+      "Version": "12.23.444.01"
+    }, 
+  {
+      "Id": 6,
+      "InstanceName": "student5/dffffb1",
+      "Added": "/Date(1446460993730)/",
+      "Modified": "/Date(1446460993730)/",
+      "Status": 0,
+      "AuthMode": 1,
+      "UserName": "Ivan",
+      "Password": "qwertyu",
+      "Version": "12.23.444.01"
+    }, 
+  {
+      "Id": 7,
+      "InstanceName": "student5/dffffb1",
+      "Added": "/Date(1446460993730)/",
+      "Modified": "/Date(1446460993730)/",
+      "Status": 0,
+      "AuthMode": 1,
+      "UserName": "Ivan",
+      "Password": "qwertyu",
+      "Version": "12.23.444.01"
+    },
+  {
+    "Id": 8,
+    "InstanceName": "student5/dffffb1",
+    "Added": "/Date(1446460993730)/",
+    "Modified": "/Date(1446460993730)/",
+    "Status": 0,
+    "AuthMode": 1,
+    "UserName": "Ivan",
+    "Password": "qwertyu",
+    "Version": "12.23.444.01"
+  }
+
+]

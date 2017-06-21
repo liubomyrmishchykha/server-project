@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div ng-controller="OptionsCtrl">
+    <form name="optionsForm" class="form-horizontal" role="form" ng-submit="submitForm()" novalidate>
+        <div class="form-group" ng-class="{ 'has-error' : optionsForm.Interval.$invalid && !optionsForm.Interval.$pristine }">
+            <label for="interval" class="col-sm-2 control-label">Update servers time:</label>
+            <div class="col-sm-10">
+                <input type="number" ng-model="options.Interval" name="Interval" class="form-control" id="interval" placeholder="Interval"  min="0" max="50000" required>
+                <p ng-show="optionsForm.Interval.$invalid && !optionsForm.Interval.$pristine" class="help-block">Interval is required.</p>
+            </div>
+        </div>
+
+        <!--SUBMIT / CANCEL -->
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary" ng-disabled="optionsForm.$invalid">Save options</button>
+                <a ng-click="cancel()" class="btn btn-default">cancel</a>
+            </div>
+        </div>
+    </form>
+</div>

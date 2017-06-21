@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <FeatureGroup Id="CompleteFeatures">
+      <Feature Id="Complete" Level="1">
+        <ComponentGroupRef Id="ProductComponentsWS"/>
+        <ComponentGroupRef Id="ProductComponentsWCF"/>
+        <ComponentRef Id="ProgramMenuDir" />
+        <ComponentRef Id="SqlmasterWindowsService" />
+        <ComponentRef Id="SqlmasterWCFWindowsServiceHost"/>
+      </Feature>
+    </FeatureGroup>
+  </Fragment>
+  <Fragment>
+    <Binary Id="CustomActionBinary" SourceFile="$(var.CustomActionCreateDatabase.TargetDir)$(var.CustomActionCreateDatabase.TargetName).CA.dll"/>
+    <CustomAction Id="CustomActionCreateDatabase" BinaryKey="CustomActionBinary" DllEntry="CreateDatabase" Execute="immediate" Return="check"/>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponentsWS" Directory="APPLICATIONFOLDERWS">
+      <ComponentGroupRef Id="WinServiceBinaries"/>
+      <ComponentGroupRef Id="WindowsService.Content"/>
+    </ComponentGroup>
+    <ComponentGroup Id="ProductComponentsWCF" Directory="APPLICATIONFOLDERWCF">
+      <ComponentGroupRef Id="WCFBinaries"/>
+      <ComponentGroupRef Id="WCFWindowsServiceHosting.Content"/>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

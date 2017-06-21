@@ -1,0 +1,19 @@
+﻿{
+      "Id": 0,
+      "InstanceName": "Zstudent1/db1",
+      "Added": "10.10.2015",
+      "Modified": "12.10.2015",
+      "Status": 0,
+      "AuthMode": 1,
+      "UserName": "Ivan",
+      "Password": "qwertyu",
+      "Version": "12.23.444.01",
+	  "Database" : [
+		  { "Id":1,"Name":"MainDB","CreateTime":"1234560","total":"20",
+				"Table" :[{"Name":"GroceriesChild1"},{"Name":"GroceriesChild2"},{"Name":"GroceriesChild3"},{"Name":"GroceriesChild4"}] }
+		  ,{ "Id":2,"Name":"OtherDB","CreateTime":"1234560","total":"20",
+				"Table" :[{"Name":"GroceriesChild1"},{"Name":"GroceriesChild2"}] }
+	  ]
+ }
+
+ 

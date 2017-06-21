@@ -1,0 +1,7 @@
+IF DB_ID('testDb') IS NULL
+	CREATE DATABASE testDb
+GO
+
+USE testDb
+GO
+

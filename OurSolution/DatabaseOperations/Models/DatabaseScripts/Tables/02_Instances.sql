@@ -1,0 +1,16 @@
+﻿IF OBJECT_ID('Instances', 'U') IS NULL
+	CREATE TABLE Instances
+	(
+		Id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+		HostName VARCHAR(64) NOT NULL,
+		InstanceName VARCHAR(64) NULL,
+		Status INT NULL,
+		Version VARCHAR(64) NULL,
+		Added DATETIME NOT NULL,
+		Modified DATETIME NULL,
+        RAM INT NULL,
+        CPUCount INT NULL,
+		UserId INT CONSTRAINT FK_Instances_Users FOREIGN KEY REFERENCES Users(Id) NULL
+	)
+GO
+

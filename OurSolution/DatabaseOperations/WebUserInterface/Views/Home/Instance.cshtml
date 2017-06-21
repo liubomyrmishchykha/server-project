@@ -1,0 +1,96 @@
+﻿@{
+    Layout = null;
+}
+
+<div ng-controller="InstanceDetailCtrl">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <table class="table table-striped table-bordered table-responsive" data-show-columns="true" data-id-field="InstanceName">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Instance Id</td>
+                        <td>{{instance.Id}}</td>
+                    </tr>
+                    <tr>
+                        <td>Instance Name</td>
+                        <td>{{instance.InstanceName}}</td>
+                    </tr>
+                    <tr>
+                        <td>Added</td>
+                        <td>{{instance.Added | dateFilterForPage | date: 'yyyy-MM-dd'}}</td>
+                    </tr>
+                    <tr>
+                        <td>Modified</td>
+                        <td>{{instance.Modified | dateFilterForPage | date: 'yyyy-MM-dd'}}</td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td>{{instance.Status}}</td>
+                    </tr>
+                    <tr>
+                        <td>User Name</td>
+                        <td>{{instance.UserName}}</td>
+                    </tr>
+                    <tr>
+                        <td>Version</td>
+                        <td>{{instance.Version}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <table class="table table-striped table-bordered table-responsive">
+                <thead>
+                    <tr>
+                        <th>Database</th>
+                        <th>CreateTime</th>
+                        <th>Total Size</th>
+                        <th>Db State</th>
+                        <th>Tables Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat-start='db in instance.Databases'>
+                        <td><button class="btn btn-primary hide-show-btn" ng-click="viewChilds= !viewChilds">{{viewChilds? '-' : '+'}}</button>{{db.Name}}</td>
+                        <td>{{db.CreateTime | dateFilterForPage | date: 'yyyy-MM-dd'}}</td>
+                        <td>{{db.TotalSize}}</td>
+                        <td><div class="database-status database-status-{{db.DbState}}"></div>{{db.DbState | databaseStatus}}</td>
+                        <td>{{db.Tables.length}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan='5' ng-class="viewChilds? '' : 'hide'">
+                            <table class="subTable">
+                                <thead>
+                                    <tr>
+                                        <th>Table name</th>
+                                        <th>Columns Count</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat='tab in db.Tables'>
+                                        <td>{{tab.Name}}</td>
+                                        <td>{{tab.ColumnCount}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr ng-repeat-end></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+            <a ng-click="back()" class="btn btn-default">back</a>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+<h3>Edit User</h3>
+<div ng-controller="EditUserCtrl">
+
+    <form name="userForm" class="form-horizontal" role="form" ng-submit="submitForm()" novalidate>
+        <!-- NAME -->
+        <div class="form-group" ng-class="{ 'has-error' : userForm.Name.$invalid && !userForm.Name.$pristine }">
+            <label for="inputName" class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-10">
+                <input id="inputName" type="text" name="Name" ng-model="user.Name" class="form-control" placeholder="Name" required>
+                <p ng-show="userForm.Name.$invalid && !userForm.Name.$pristine" class="help-block">Your name is required.</p>
+            </div>
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="form-group" ng-class="{ 'has-error' : userForm.Password.$invalid && !userForm.Password.$pristine }">
+            <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+                <input id="inputPassword" type="text" name="Password" ng-model="user.Password" class="form-control" placeholder="Name" required>
+                <p ng-show="userForm.Password.$invalid && !userForm.Password.$pristine" class="help-block">You name is required.</p>
+            </div>
+        </div>
+
+        <!--CONFIRM PASSWORD -->
+        <div class="form-group" ng-class="{ 'has-error' : userForm.ConfirmPassword.$invalid && !userForm.ConfirmPassword.$pristine }">
+            <label for="inputConfirmPassword" class="col-sm-2 control-label">Confirm Password</label>
+            <div class="col-sm-10">
+                <input id="inputConfirmPassword" type="password" name="ConfirmPassword" ng-model="user.ConfirmPassword" class="form-control" placeholder="ConfirmPassword" compare-to="user.Password">
+                <p ng-show="userForm.ConfirmPassword.$invalid && !userForm.ConfirmPassword.$pristine" class="help-block">Sorry, the passwords don't match.</p>
+            </div>
+        </div>
+
+        <!--SUBMIT / CANCEL -->
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Edit user</button>
+                <a ng-click="cancel()" class="btn btn-default">cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
